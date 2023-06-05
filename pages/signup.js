@@ -23,7 +23,7 @@ const SignupPage = () => {
     try {
       await signup(email, password, name);
       setLoader(true);
-      router.push("/");
+      router.push("/movie");
     } catch (error) {
       console.log(error);
       setError("Something went wrong to create account");

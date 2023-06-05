@@ -18,7 +18,7 @@ const LoginPage = () => {
     try {
       await login(email, password);
       setLoader(true);
-      router.push("/");
+      router.push("/movie");
     } catch (error) {
       console.log(error);
       setError("Failed to login!");
@@ -33,7 +33,7 @@ const LoginPage = () => {
             {error}
           </p>
         )}
-        <h2 className="text-black text-3xl">Create your account</h2>
+        <h2 className="text-black text-3xl">Login</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label className={styles.label}>Email:</label>

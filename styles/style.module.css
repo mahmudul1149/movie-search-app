@@ -18,7 +18,8 @@ font-family: 'Roboto Mono', monospace; */
   display: flex;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(#eaeffb, #f7efeb);
+  /* background-image: linear-gradient(#eaeffb, #f7efeb); */
+  background: url("../background-login.jpg") no-repeat center center/cover;
 }
 
 .form {
