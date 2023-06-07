@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import Search from "../components/Search";
 
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
 
@@ -49,6 +50,7 @@ const App = () => {
 
   return (
     <div className="home-page">
+      <Search search={search} />
       <p className="App-intro">Sharing a few of our favourite movies</p>
       <div className="movies">
         {loading && !errorMessage ? (
