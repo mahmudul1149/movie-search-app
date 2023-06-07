@@ -29,9 +29,7 @@ const LoginPage = () => {
     try {
       await loginWithGoogle();
       router.push("/movie");
-    } catch (error) {
-      setError("Failed to login!");
-    }
+    } catch (error) {}
   };
   return (
     <div className={styles.mainContainer}>
@@ -41,7 +39,7 @@ const LoginPage = () => {
             {error}
           </p>
         )}
-        <h2 className="text-black text-3xl">Login</h2>
+        <h2 className={styles.title}>Login</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label className={styles.label}>Email:</label>

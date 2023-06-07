@@ -30,13 +30,13 @@ const SignupPage = () => {
       setLoader(false);
     }
   };
-  const handleSignupWithGoogle = async () => {
+  const handleSignupWithGoogle = async (e) => {
+    e.preventDefault();
     try {
       await signupWithGoogle();
       router.push("/movie");
     } catch (error) {
       console.log(error);
-      setError("Something went wrong to create account");
     }
   };
   return (
@@ -47,7 +47,7 @@ const SignupPage = () => {
             {error}
           </p>
         )}
-        <h2 className="text-black text-3xl">Create your account</h2>
+        <h2 className={styles.title}>Create your account</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label className={styles.label}>Name:</label>

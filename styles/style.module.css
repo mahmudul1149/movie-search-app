@@ -19,14 +19,21 @@ font-family: 'Roboto Mono', monospace; */
   align-items: center;
   height: 100vh;
   /* background-image: linear-gradient(#eaeffb, #f7efeb); */
-  background: url("../background-login.jpg") no-repeat center center/cover;
+  /* background: url("../background-login.jpg") no-repeat center center/cover; */
+  background: url("https://img.freepik.com/free-photo/movie-background-collage_23-2149876015.jpg")
+    no-repeat center center/cover;
 }
 
 .form {
   display: flex;
   flex-direction: column;
 }
-
+.title {
+  color: #333;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+  opacity: 0.9;
+}
 .label {
   font-family: "Poppins", sans-serif;
   color: #333;
