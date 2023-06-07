@@ -1,3 +1,4 @@
+import Link from "next/link";
 const HomePage = () => {
   return (
     <div className="home">
@@ -8,10 +9,10 @@ const HomePage = () => {
           your account.
         </p>
         <div className="mt-2">
-          <a href="/signup">
+          <Link href="/signup">
             {" "}
             <button className="signup">Signup</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
