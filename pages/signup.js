@@ -1,4 +1,5 @@
 import { useAuth } from "@/authcontext/authcontext";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../styles/style.module.css";
@@ -110,12 +111,12 @@ const SignupPage = () => {
           </button>
         </form>
         <div className="text-center">
-          <a
+          <Link
             href="/login"
             className=" chnageRoute text-black text-1xl text-center underline"
           >
             Already Have a Account ? Login
-          </a>
+          </Link>
         </div>
 
         <p className="text-center text-black text-1xl py-2 or">0r</p>
