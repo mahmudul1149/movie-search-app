@@ -1,8 +1,10 @@
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -50,8 +52,32 @@ export function AuthProvider({ children }) {
     const auth = getAuth();
     return signInWithEmailAndPassword(auth, email, password);
   }
+  async function signupWithGoogle() {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      await updateProfile(user, {
+        displayName: user.displayName,
+      });
+      setCurrentUser(user);
+    } catch (error) {}
+  }
 
-  // logout function
+  async function loginWithGoogle() {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      setCurrentUser(user);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function logout() {
     const auth = getAuth();
     return signOut(auth);
@@ -61,6 +87,8 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    signupWithGoogle,
+    loginWithGoogle,
     logout,
   };
 

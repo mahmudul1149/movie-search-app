@@ -9,7 +9,7 @@ const LoginPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoader] = useState(false);
 
-  const { login } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -23,6 +23,14 @@ const LoginPage = () => {
       console.log(error);
       setError("Failed to login!");
       setLoader(false);
+    }
+  };
+  const handleLoginWithGoogle = async () => {
+    try {
+      await loginWithGoogle();
+      router.push("/movie");
+    } catch (error) {
+      setError("Failed to login!");
     }
   };
   return (
@@ -74,7 +82,10 @@ const LoginPage = () => {
         <p className="text-center text-black text-1xl py-2 or">0r</p>
         <div className="postion-box">
           <div className="text-center">
-            <button className="btn-google text-1xl ">
+            <button
+              className="btn-google text-1xl "
+              onClick={handleLoginWithGoogle}
+            >
               LOGIN UP WITH GOOGLE
             </button>
           </div>

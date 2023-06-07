@@ -11,7 +11,7 @@ const SignupPage = () => {
   const [error, setError] = useState("");
   const [loading, setLoader] = useState(false);
 
-  const { signup } = useAuth();
+  const { signup, signupWithGoogle } = useAuth();
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -28,6 +28,15 @@ const SignupPage = () => {
       console.log(error);
       setError("Something went wrong to create account");
       setLoader(false);
+    }
+  };
+  const handleSignupWithGoogle = async () => {
+    try {
+      await signupWithGoogle();
+      router.push("/movie");
+    } catch (error) {
+      console.log(error);
+      setError("Something went wrong to create account");
     }
   };
   return (
@@ -112,7 +121,10 @@ const SignupPage = () => {
         <p className="text-center text-black text-1xl py-2 or">0r</p>
         <div className="postion-box">
           <div className="text-center">
-            <button className="btn-google text-1xl ">
+            <button
+              className="btn-google text-1xl "
+              onClick={handleSignupWithGoogle}
+            >
               SIGN UP WITH GOOGLE
             </button>
           </div>

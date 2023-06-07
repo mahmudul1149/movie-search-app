@@ -1,4 +1,16 @@
+import { useAuth } from "@/authcontext/authcontext";
+import { useRouter } from "next/router";
 const Navbar = () => {
+  const { currentUser, logout } = useAuth();
+  const router = useRouter();
+  const loggedout = async () => {
+    try {
+      await logout();
+      router.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="navbar py-4 px-4">
       <header className="flex justify-between items-centerr">
@@ -11,28 +23,35 @@ const Navbar = () => {
               Home
             </a>
           </li>
+          {currentUser && (
+            <li>
+              <a href="#">Movies</a>
+            </li>
+          )}
 
-          <li>
-            <a href="#">Movies</a>
-          </li>
-          <li>
-            <a href="/login">
-              <button className="btn signin">Sign In</button>
-            </a>
-          </li>
-          <li>
-            <a href="signup">
-              <button className="btn signup">Sign Up</button>
-            </a>
-          </li>
-          <li className="flex items-center gap-2">
-            <img
-              className="profile"
-              src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-260nw-1913928688.jpg"
-              alt=""
-            />
-            <span className="userName">Mahmudul</span>
-          </li>
+          {!currentUser ? (
+            <>
+              <li>
+                <a href="/login">
+                  <button className="btn signin">Sign In</button>
+                </a>
+              </li>
+              <li>
+                <a href="signup">
+                  <button className="btn signup">Sign Up</button>
+                </a>
+              </li>
+            </>
+          ) : (
+            <li className="flex items-center gap-2" onClick={loggedout}>
+              <img
+                className="profile"
+                src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-260nw-1913928688.jpg"
+                alt=""
+              />
+              <span className="userName">{currentUser.displayName}</span>
+            </li>
+          )}
         </ul>
       </header>
     </div>

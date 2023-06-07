@@ -113,7 +113,7 @@
 }
 
 .search {
-  padding-top: 3rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -208,6 +208,7 @@ input[type="submit"]:hover {
   cursor: pointer;
 }
 .navbar .userName {
+  cursor: pointer;
   font-size: 14px;
   opacity: 0.9;
   font-weight: 700;
