@@ -82,11 +82,23 @@
 }
 
 .movies {
+  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
-
+.movie h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.movie p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
 .App-header h2 {
   margin: 0;
 }
