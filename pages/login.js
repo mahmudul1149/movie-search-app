@@ -84,15 +84,14 @@ const LoginPage = () => {
               className="btn-google text-1xl "
               onClick={handleLoginWithGoogle}
             >
-              LOGIN UP WITH GOOGLE
+              <span>LOGIN WITH </span>
+
+              <img
+                className="google-icon"
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968863.png"
+                alt=""
+              />
             </button>
-          </div>
-          <div className="text-center">
-            <img
-              className="google-icon"
-              src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"
-              alt=""
-            />
           </div>
         </div>
       </div>

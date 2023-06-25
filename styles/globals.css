@@ -20,35 +20,24 @@
 }
 
 .google-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: 0.3rem;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  margin-left: 0.4rem;
 }
-.postion-box {
-  background: #f1f5f9;
-  cursor: pointer;
-  position: relative;
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
   width: 100%;
   height: 50px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-.btn-google {
+  text-align: center !important;
   font-weight: 800;
-  opacity: 0.6;
-  font-size: 1.1rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
   font-family: "Roboto Mono", monospace;
-  color: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-left: 2.5rem;
-  text-align: left;
-  width: 100%;
-  height: 100%;
+  border-radius: 10px;
 }
 .chnageRoute {
   font-family: "Poppins", sans-serif;
